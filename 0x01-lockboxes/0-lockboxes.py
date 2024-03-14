@@ -7,15 +7,13 @@ def canUnlockAll(boxes):
     """
       a function with parameter boxes that checks if all boxes can be opened
     """
-    set = {0}
-    boxLen = len(boxes)
-
-    for i in range(boxLen - 1):
-        box = boxes[i]
-        for j in range(len(box)):
-            index = box[j]
-            if (boxes[index] in boxes):
-                set.add(index)
-                if (len(set) == boxLen and j != i):
-                  return True
-    return False
+    for key in range(1, len(boxes)):
+        opened = False
+        for box in range(len(boxes)):
+            if key in boxes[box] and box != key:
+                opened = True
+                break
+            
+        if not opened:
+            return False
+    return True
