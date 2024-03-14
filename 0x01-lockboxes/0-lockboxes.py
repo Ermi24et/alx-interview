@@ -3,6 +3,7 @@
 a module that determines if all the locked boxes can be opened
 """
 
+
 def canUnlockAll(boxes):
     """
       a function with parameter boxes that checks if all boxes can be opened
