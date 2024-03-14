@@ -13,7 +13,6 @@ def canUnlockAll(boxes):
             if key in boxes[box] and box != key:
                 opened = True
                 break
-            
         if not opened:
             return False
     return True
