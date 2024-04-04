@@ -11,7 +11,7 @@ def validUTF8(data):
         if count_ == 0:
             if byte >> 7 == 0:
                 continue
-            elif byte >> 5 == 0b110:
+            elif byte >> 5 == 0b110 or byte >> 5 == 0b1110:
                 count_ = 1
             elif byte >> 4 == 0b1110:
                 count_ = 2
