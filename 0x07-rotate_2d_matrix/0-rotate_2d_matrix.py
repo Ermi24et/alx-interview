@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 """Rotate 2D Matrix"""
+N = 3
 
 
 def rotate_2d_matrix(matrix):
-    """a method that rotate a 2D matrix 90 degrees clockwise """
-    temp = matrix[0][0]
-    temp1 = matrix[0][1]
-    temp2 = matrix[0][2]
-    temp3 = matrix[1][2]
-    matrix[0][0] = matrix[2][0]
-    matrix[0][1] = matrix[1][0]
-    matrix[0][2] = temp
-    matrix[1][0] = matrix[2][1]
-    matrix[1][1] = matrix[1][1]
-    matrix[1][2] = temp1
-    matrix[2][0] = matrix[2][2]
-    matrix[2][1] = temp3
-    matrix[2][2] = temp2
+    """a method to rotate 2D matrix 90 degrees clockwise"""
+    for x in range(0, int(N / 2)):
+        for y in range(x, N-x-1):
+            temp = matrix[x][y]
+            matrix[x][y] = matrix[N-1-y][x]
+            matrix[N-1-y][x] = matrix[N-1-x][N-1-y]
+            matrix[N-1-x][N-1-y] = matrix[y][N-1-x]
+            matrix[y][N-1-x] = temp
