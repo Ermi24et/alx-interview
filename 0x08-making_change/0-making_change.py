@@ -19,8 +19,7 @@ def makeChange(coins, total):
         for j in range(n):
             if (coins[j] <= i):
                 sub_sol = table[i - coins[j]]
-                if (sub_sol != sys.maxsize and
-                    sub_sol + 1 < table[i]):
+                if (sub_sol != sys.maxsize and sub_sol + 1 < table[i]):
                     table[i] = sub_sol + 1
 
     if table[total] == sys.maxsize:
