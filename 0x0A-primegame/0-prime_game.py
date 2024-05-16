@@ -9,7 +9,7 @@ def check_prime(n):
     primes = []
     elemets = [True] * (n + 1)
     for prime in range(2, n + 1):
-        if (elemets[p]):
+        if (elemets[prime]):
             primes.append(prime)
             for i in range(prime, n + 1, prime):
                 elemets[i] = False
